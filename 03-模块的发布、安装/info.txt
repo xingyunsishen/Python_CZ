@@ -1,0 +1,19 @@
+安装自定义包的步骤：
+1.在包的同级目录下新建一个setup.py文件
+2.在setup.py中写入:
+from distutils.core import setup
+setup(name="xueji", version="0.0.1", description="xueji's module", author="xueji", py_modules=['Testmsg.sendmsg', 'Testmsg.recvmsg'])
+3.构建模块
+python3 setup.py build
+4.生成发布压缩包
+python3 setup.py sdist
+5.安装自定义的模块包
+5.1 找到模块的压缩包
+5.2 解压
+5.3 进入解压出来的文件夹
+5.4 执行python3 setup.py install（可以在install后面加--prefix=/x
+xxx/xxx参数指定安装路径）
+6.使用自定义的模块包
+from 模块名 import *或者模块名
+  
+
